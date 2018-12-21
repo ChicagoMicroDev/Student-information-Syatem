@@ -11,6 +11,14 @@ public class CourseSessionTest {
         assertEquals("101", session.getNumber());
         assertEquals(0, session.getNumberofStudent());
 
+        Student student1 = new Student("Joseph Smith ");
+        session.enroll(student1);
+        assertEquals(1,session.getNumberofStudent());
+
+        Student student2 = new Student("Semira Allen");
+        session.enroll(student2);
+        assertEquals(2, session.getNumberofStudent());
+
 
     }
 }
