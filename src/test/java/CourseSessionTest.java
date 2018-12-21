@@ -9,6 +9,7 @@ public class CourseSessionTest {
         CourseSession session = new CourseSession("ENGL", "101");
         assertEquals("ENGL", session.getDepartment());
         assertEquals("101", session.getNumber());
+        assertEquals(0, session.getNumberofStudent());
 
 
     }

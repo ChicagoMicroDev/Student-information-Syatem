@@ -17,4 +17,7 @@ public class CourseSession {
     }
 
 
+    public int getNumberofStudent() {
+        return 0;
+    }
 }
