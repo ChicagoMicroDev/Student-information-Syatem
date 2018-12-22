@@ -1,4 +1,8 @@
+package studentinfo;
+
 import org.junit.Test;
+import studentinfo.CourseSession;
+import studentinfo.Student;
 
 
 import static junit.framework.TestCase.assertEquals;
@@ -6,7 +10,12 @@ import static junit.framework.TestCase.assertEquals;
 import java.util.ArrayList;
 
 public class CourseSessionTest {
+    private CourseSession session;
+    public void setUp(){
+        session = new CourseSession("ENGL", "101");
+    }
     @Test
+
     public void testCreate() {
 
         CourseSession session = new CourseSession("ENGL", "101");

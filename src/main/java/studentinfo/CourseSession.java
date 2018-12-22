@@ -1,3 +1,5 @@
+package studentinfo;
+
 public class CourseSession {
 
     private String department;
@@ -33,5 +35,9 @@ public class CourseSession {
     java.util.ArrayList<Student>getAllStudents(){
         return students;
     }
+    Student get(int index){
+        return students.get(index);
+    }
+
 
 }

@@ -1,4 +1,7 @@
+package studentinfo;
+
 import org.junit.Test;
+import studentinfo.Student;
 
 import static org.junit.Assert.assertEquals;
 
