@@ -11,13 +11,14 @@ import java.util.ArrayList;
 
 public class CourseSessionTest {
     private CourseSession session;
-    public void setUp(){
+
+    public void setUp() {
         session = new CourseSession("ENGL", "101");
     }
+
     @Test
 
-    public void testCreate() {
-
+    public void canCreate() {
         CourseSession session = new CourseSession("ENGL", "101");
         assertEquals("ENGL", session.getDepartment());
         assertEquals("101", session.getNumber());
@@ -25,10 +26,10 @@ public class CourseSessionTest {
 
         Student student1 = new Student("Joseph Smith ");
         session.enroll(student1);
-        assertEquals(1,session.getNumberofStudent());
-       ArrayList<Student> allStudents = session.getAllStudents();
+        assertEquals(1, session.getNumberofStudent());
+        ArrayList<Student> allStudents = session.getAllStudents();
         assertEquals(1, allStudents.size());
-        assertEquals(student1,allStudents.get(0));
+        assertEquals(student1, allStudents.get(0));
 
         Student student2 = new Student("Semira Allen");
         session.enroll(student2);
