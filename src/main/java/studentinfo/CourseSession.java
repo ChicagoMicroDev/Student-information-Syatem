@@ -56,24 +56,37 @@ public class CourseSession {
         return students.get(index);
     }
 
-//    String getRosterReport(){
-//        StringBuilder buffer = new StringBuilder();
-//
-//        buffer.append(ROSTER_REPORT_HEADER);
-//
+    static final String NEWLINE = System.getProperty("line.separator");
+    static final String ROSTER_REPORT_HEADER = "Student" + NEWLINE + "____" + NEWLINE;
+    static final String ROSTER_REPORT_FOOTER = NEWLINE + "# students =";
+
+    String getRosterReport() {
+
+        StringBuilder buffer = new StringBuilder();
+
+        buffer.append(ROSTER_REPORT_HEADER);
+
+        for(Student student: students){
+            buffer.append(student.getName());
+            buffer.append(NEWLINE);
+        }
+
 //        Student student = students.get(0);
-//        buffer.append(students.getName());
-//        buffer.append('\n');
-//
-//        student = student.get(1);
 //        buffer.append(student.getName());
-//        buffer.append('\n');
+//        buffer.append(NEWLINE);
 //
-//        buffer.append(ROSTER_REPORT_FOOTER + students.size() + '\n');
-//
-//        return buffer.toString();
-//
-//    }
-//
-//
+//        student = students.get(1);
+//        buffer.append(student.getName());
+//        buffer.append(NEWLINE);
+
+        buffer.append(ROSTER_REPORT_FOOTER + students.size() + NEWLINE);
+
+        return buffer.toString();
+
+    }
+    ArrayList<Student>getAllStudents(){
+        return students;
+    }
+
+
 }
