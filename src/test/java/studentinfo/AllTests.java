@@ -7,6 +7,7 @@ import org.junit.runners.Suite;
         StudentTest.class,
         CourseSessionTest.class,
         RosterReporterTest.class,
+        DateUtilTest.class,
 })
 
 public class AllTests {
