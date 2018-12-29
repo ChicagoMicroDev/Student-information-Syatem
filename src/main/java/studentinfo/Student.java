@@ -1,10 +1,10 @@
 package studentinfo;
 
 public class Student {
-    String name ;
+    String name;
 
     public Student(String name) {
-       this.name = name;
+        this.name = name;
     }
 
     public String getName() {
