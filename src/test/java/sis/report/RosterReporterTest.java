@@ -1,6 +1,10 @@
-package studentinfo;
+package sis.report;
 
 import org.junit.*;
+//import sis.report.RosterReporter;
+import sis.studentinfo.CourseSession;
+import sis.studentinfo.DateUtil;
+import sis.studentinfo.Student;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -12,12 +16,13 @@ import static org.junit.Assert.assertEquals;
 public class RosterReporterTest {
     @Test
     public void CanCreateRosterReport() {
-        CourseSession session = new CourseSession("ENGL", "101", createDate(2003, 1, 6));
+        CourseSession session = new CourseSession("ENGL", "101", new DateUtil().createDate(2003, 1 , 6));
 
         session.enroll(new Student("Joseph Smith"));
         session.enroll(new Student("Semira Allen"));
 
         String rosterReport = new RosterReporter(session).getReport();
+        System.out.println(rosterReport);
         assertEquals(RosterReporter.ROSTER_REPORT_HEADER + "Joseph Smith" + RosterReporter.NEWLINE + "Semira Allen" + RosterReporter.NEWLINE + RosterReporter.ROSTER_REPORT_FOOTER + "2" + RosterReporter.NEWLINE, rosterReport);
     }
     Date createDate(int year, int month, int date){

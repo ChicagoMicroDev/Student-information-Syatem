@@ -1,6 +1,7 @@
-package studentinfo;
+package sis.report;
 
-import java.util.*;
+import sis.studentinfo.CourseSession;
+import sis.studentinfo.Student;
 
 
 public class RosterReporter {
@@ -19,18 +20,26 @@ public class RosterReporter {
 
     String getReport() {
         StringBuilder buffer = new StringBuilder();
-        buffer.append(ROSTER_REPORT_HEADER);
+        writeHeader(buffer);
+        writeBody(buffer);
+        writeFooter(buffer);
 
-        for (Student student : session.getAllStudents()) {
-            buffer.append(student.getName());
-            buffer.append(NEWLINE);
-        }
-
-
-        buffer.append(
-                ROSTER_REPORT_FOOTER + session.getAllStudents().size() + NEWLINE);
         return buffer.toString();
 
+    }
 
+    void writeHeader(StringBuilder buffer) {
+        buffer.append(ROSTER_REPORT_HEADER);
+    }
+
+    public void writeBody(StringBuilder buffer) {
+        for (Student student : session.getAllStudents()) {
+            buffer.append((student.getName()));
+            buffer.append(NEWLINE);
+        }
+    }
+    void writeFooter(StringBuilder buffer){
+        buffer.append(
+                ROSTER_REPORT_FOOTER + session.getAllStudents().size() + NEWLINE);
     }
 }

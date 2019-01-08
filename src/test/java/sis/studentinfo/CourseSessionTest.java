@@ -1,4 +1,4 @@
-package studentinfo;
+package sis.studentinfo;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -18,7 +18,7 @@ public class CourseSessionTest {
     @Before
     public void setUp() {
 
-        startDate = new Date(2003, 1, 6);
+        startDate = new DateUtil().createDate(2003,1,6);
         session = new CourseSession("ENGL", "101", startDate);
     }
 
@@ -48,7 +48,7 @@ public class CourseSessionTest {
 
     @Test
     public void CanCreateCourseDates() {
-        Date sixteenWeeksOut = new Date(2003, 4, 26);
+        Date sixteenWeeksOut = new DateUtil().createDate(2003, 4 , 25);
         assertEquals(sixteenWeeksOut, session.getEndDate());
     }
 
@@ -61,24 +61,24 @@ public class CourseSessionTest {
         return calendar.getTime();
     }
 
-
-    @Test
-    public void CanCreateRosterReport() {
-        Student studentA = new Student("Joseph Smith");
-        Student studentB = new Student("Semira Allen");
-
-        session.enroll(new Student("Joseph Smith"));
-        session.enroll(new Student("Semira Allen"));
-
-        String rosterReport = session.getRosterReport();
-        assertEquals(CourseSession.ROSTER_REPORT_HEADER +
-                "Joseph Smith" + CourseSession.NEWLINE +
-                "Semira Allen" + CourseSession.NEWLINE +
-                CourseSession.ROSTER_REPORT_FOOTER + "2" +
-                CourseSession.NEWLINE, rosterReport);
-
-
-    }
+//
+//    @Test
+//    public void CanCreateRosterReport() {
+//        Student studentA = new Student("Joseph Smith");
+//        Student studentB = new Student("Semira Allen");
+//
+//        session.enroll(new Student("Joseph Smith"));
+//        session.enroll(new Student("Semira Allen"));
+//
+//        String rosterReport = session.getRosterReport();
+//        assertEquals(CourseSession.ROSTER_REPORT_HEADER +
+//                "Joseph Smith" + CourseSession.NEWLINE +
+//                "Semira Allen" + CourseSession.NEWLINE +
+//                CourseSession.ROSTER_REPORT_FOOTER + "2" +
+//                CourseSession.NEWLINE, rosterReport);
+//
+//
+//    }
 
 
 }

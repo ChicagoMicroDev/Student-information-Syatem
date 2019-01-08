@@ -1,6 +1,5 @@
-package studentinfo;
+package sis.studentinfo;
 
-import java.util.*;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -14,7 +13,7 @@ public class CourseSession {
             new ArrayList<Student>();
     private Date startDate;
 
-    CourseSession(String department, String number, Date startDate) {
+    public CourseSession(String department, String number, Date startDate) {
         this.department = department;
         this.number = number;
         this.startDate = startDate;
@@ -38,12 +37,12 @@ public class CourseSession {
     }
 
 
-    int getNumberOfStudent() {
+    public int getNumberOfStudent() {
 
         return students.size();
     }
 
-    void enroll(Student student) {
+    public void enroll(Student student) {
         students.add(student);
     }
 
@@ -59,32 +58,33 @@ public class CourseSession {
     static final String NEWLINE = System.getProperty("line.separator");
     static final String ROSTER_REPORT_HEADER = "Student" + NEWLINE + "____" + NEWLINE;
     static final String ROSTER_REPORT_FOOTER = NEWLINE + "# students =";
-
-    String getRosterReport() {
-
-        StringBuilder buffer = new StringBuilder();
-
-        buffer.append(ROSTER_REPORT_HEADER);
-
-        for(Student student: students){
-            buffer.append(student.getName());
-            buffer.append(NEWLINE);
-        }
-
-//        Student student = students.get(0);
-//        buffer.append(student.getName());
-//        buffer.append(NEWLINE);
 //
-//        student = students.get(1);
-//        buffer.append(student.getName());
-//        buffer.append(NEWLINE);
+//    String getRosterReport() {
+//
+//        StringBuilder buffer = new StringBuilder();
+//
+//        buffer.append(ROSTER_REPORT_HEADER);
+//
+//        for (Student student : students) {
+//            buffer.append(student.getName());
+//            buffer.append(NEWLINE);
+//        }
+//
+////        Student student = students.get(0);
+////        buffer.append(student.getName());
+////        buffer.append(NEWLINE);
+////
+////        student = students.get(1);
+////        buffer.append(student.getName());
+////        buffer.append(NEWLINE);
+//
+//        buffer.append(ROSTER_REPORT_FOOTER + students.size() + NEWLINE);
+//
+//        return buffer.toString();
+//
+//    }
 
-        buffer.append(ROSTER_REPORT_FOOTER + students.size() + NEWLINE);
-
-        return buffer.toString();
-
-    }
-    ArrayList<Student>getAllStudents(){
+    public ArrayList<Student> getAllStudents() {
         return students;
     }
 
