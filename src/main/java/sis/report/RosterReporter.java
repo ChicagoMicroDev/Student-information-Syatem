@@ -1,7 +1,7 @@
 package sis.report;
 
 import sis.studentinfo.CourseSession;
-import sis.studentinfo.Student;
+import sis.studentinfo.*;
 
 
 public class RosterReporter {

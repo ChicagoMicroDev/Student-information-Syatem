@@ -37,7 +37,7 @@ public class CourseSession {
     }
 
 
-    public int getNumberOfStudent() {
+     int getNumberOfStudent() {
 
         return students.size();
     }

@@ -1,5 +1,6 @@
 package sis.studentinfo;
 
+import junit.framework.Test;
 import org.junit.runner.*;
 import org.junit.runners.Suite;
 import sis.report.RosterReporterTest;
@@ -13,4 +14,5 @@ import sis.report.RosterReporterTest;
 })
 
 public class AllTests {
+
 }

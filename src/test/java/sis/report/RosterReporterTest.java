@@ -4,7 +4,7 @@ import org.junit.*;
 //import sis.report.RosterReporter;
 import sis.studentinfo.CourseSession;
 import sis.studentinfo.DateUtil;
-import sis.studentinfo.Student;
+import sis.studentinfo.*;
 
 import java.util.Calendar;
 import java.util.Date;
